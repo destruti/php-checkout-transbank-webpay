@@ -1,1 +1,1 @@
-# transbank-webpay-php
+# Transbank WebPay PHP Implementation
