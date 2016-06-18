@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6786b38-f731-4088-82b6-a5707abc5ec3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/class/MySoap.php" afterPath="$PROJECT_DIR$/src/class/MySoap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/checkout.php" afterPath="$PROJECT_DIR$/src/checkout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/returnUrl.php" afterPath="$PROJECT_DIR$/src/returnUrl.php" />
     </list>
     <ignored path="transbank-webpay-php.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,20 +63,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="returnUrl.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="returnUrl.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/returnUrl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="306">
-              <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+            <state vertical-scroll-proportion="0.061503418" vertical-offset="0" max-vertical-offset="878">
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySoap.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MySoap.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/class/MySoap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3690205" vertical-offset="18" max-vertical-offset="1170">
+            <state vertical-scroll-proportion="-12.0" vertical-offset="18" max-vertical-offset="1170">
               <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
               <folding />
             </state>
@@ -95,10 +93,10 @@
       <list>
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/class/toolbox.php" />
-        <option value="$PROJECT_DIR$/src/returnUrl.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/src/checkout.php" />
         <option value="$PROJECT_DIR$/src/class/MySoap.php" />
+        <option value="$PROJECT_DIR$/src/returnUrl.php" />
       </list>
     </option>
   </component>
@@ -304,26 +302,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/returnUrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="954">
           <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/class/toolbox.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.333333" vertical-offset="0" max-vertical-offset="504">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -338,8 +320,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/class/MySoap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3690205" vertical-offset="18" max-vertical-offset="1170">
+        <state vertical-scroll-proportion="-12.0" vertical-offset="18" max-vertical-offset="1170">
           <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/class/toolbox.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.333333" vertical-offset="0" max-vertical-offset="504">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/returnUrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.061503418" vertical-offset="0" max-vertical-offset="878">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
           <folding />
         </state>
       </provider>
