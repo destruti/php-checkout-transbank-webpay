@@ -1,8 +1,8 @@
 <?php
 
-require '/var/www/transbank/public/src/wss/soap-validation.php';
-require '/var/www/transbank/public/src/class/tbk_TransaccionNormal.php';
-require '/var/www/transbank/public/src/class/toolbox.php';
+require 'src/wss/soap-validation.php';
+require 'src/class/tbk_TransaccionNormal.php';
+require 'src/class/toolbox.php';
 
 toolbox::log('[INTEGRATION] Enter at checkout.php');
 

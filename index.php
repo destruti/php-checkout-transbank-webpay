@@ -1,6 +1,6 @@
 <?php
 
-require '/var/www/transbank/public/src/class/toolbox.php';
+require 'src/class/toolbox.php';
 
 toolbox::log('[INTEGRATION] Enter at Index.php');
 
