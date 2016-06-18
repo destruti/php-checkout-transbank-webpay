@@ -30,11 +30,11 @@ class MySoap extends SoapClient {
         $objWSSE = new WSSESoap($doc);
 
         $objKey  = new XMLSecurityKey(XMLSecurityKey::RSA_SHA1,array('type'=> 'private'));
-        $objKey->loadKey('/var/www/transbank/cert4/597020000403.key', TRUE);
+        $objKey->loadKey('../certs/597020000403.key', TRUE);
 
         $options = array("insertBefore" => TRUE);
         $objWSSE->signSoapDoc($objKey, $options);
-        $objWSSE->addIssuerSerial('/var/www/transbank/cert4/597020000403.crt');
+        $objWSSE->addIssuerSerial('../certs/597020000403.crt');
 
         $objKey = new XMLSecurityKey(XMLSecurityKey::AES256_CBC);
         $objKey->generateSessionKey();

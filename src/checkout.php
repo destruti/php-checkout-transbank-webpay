@@ -7,13 +7,13 @@ require '/var/www/transbank/public/src/class/toolbox.php';
 toolbox::log('[INTEGRATION] Enter at checkout.php');
 
 $url_wsdl     = 'https://webpay3gint.transbank.cl/WSWebpayTransaction/cxf/WSWebpayService?wsdl';
-$SERVER_CERT  = '/var/www/transbank/cert4/597020000403.crt';
+$SERVER_CERT  = 'src/certs/597020000403.crt';
 $commerceId   = '597020000403';
 $commerceCode = '597020000403';
 $buyOrder     = '0001';
 $sessionId    = 'integration_test';
-$returnUrl    = 'http://transbank.dev/returnUrl.php';
-$finalUrl     = 'http://transbank.dev/finalUrl.php';
+$returnUrl    = 'http://transbank.dev/returnUrl.php?status=success';
+$finalUrl     = 'http://transbank.dev/returnUrl.php?status=error';
 $amount       = '7500';
 
 toolbox::log('[INTEGRATION] Transbank Start SetVars to Checkout');
