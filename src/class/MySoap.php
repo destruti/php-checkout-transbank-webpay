@@ -1,7 +1,7 @@
 <?php
 
-if (["SERVER_NAME"] == 'transbank.dev') $env = '/var/www/transbank-webpay-php/';
-if (["SERVER_NAME"] == 'transbank-test.herokuapp.com') $env = '/app/';
+if ($_SERVER["SERVER_NAME"] == 'transbank.dev') $env = '/var/www/transbank-webpay-php/';
+if ($_SERVER["SERVER_NAME"] == 'transbank-test.herokuapp.com') $env = '/app/';
 
 require $env.'src/wss/xmlseclibs.php';
 require $env.'src/wss/soap-wsse.php';
@@ -12,8 +12,8 @@ class MySoap extends SoapClient {
 
     function getEnv()
     {
-        if (["SERVER_NAME"] == 'transbank.dev') $env = '/var/www/transbank-webpay-php/';
-        if (["SERVER_NAME"] == 'transbank-test.herokuapp.com') $env = '/app/';
+        if ($_SERVER["SERVER_NAME"] == 'transbank.dev') $env = '/var/www/transbank-webpay-php/';
+        if ($_SERVER["SERVER_NAME"] == 'transbank-test.herokuapp.com') $env = '/app/';
         return $env;
     }
 

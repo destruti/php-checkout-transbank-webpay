@@ -1,7 +1,7 @@
 <?php
 
-if (["SERVER_NAME"] == 'transbank.dev') $env = '/var/www/transbank-webpay-php/';
-if (["SERVER_NAME"] == 'transbank-test.herokuapp.com') $env = '/app/';
+if ($_SERVER["SERVER_NAME"] == 'transbank.dev') $env = '/var/www/transbank-webpay-php/';
+if ($_SERVER["SERVER_NAME"] == 'transbank-test.herokuapp.com') $env = '/app/';
 
 require $env.'src/wss/soap-validation.php';
 require $env.'src/class/tbk_TransaccionNormal.php';
