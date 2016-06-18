@@ -1,7 +1,7 @@
 <?php
 
-require 'src/wss/xmlseclibs.php';
-require 'src/wss/soap-wsse.php';
+require '../wss/xmlseclibs.php';
+require '../wss/soap-wsse.php';
 
 class MySoap extends SoapClient {
 
