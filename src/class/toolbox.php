@@ -10,7 +10,7 @@ class toolbox {
 
     public static function log($message) {
         error_log(date('Y.m.d h:i:s').' > '.var_export($message, true).PHP_EOL, 3, "/tmp/transbank.log");
-        file_put_contents("php://stderr", $message."\n");
+        file_put_contents("php://stderr", var_export($message, true)."\n");
     }
 
     public static function printR($message) {
