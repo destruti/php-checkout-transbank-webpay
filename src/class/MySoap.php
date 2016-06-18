@@ -1,11 +1,20 @@
 <?php
 
-require '/app/src/wss/xmlseclibs.php';
-require '/app/src/wss/soap-wsse.php';
+$env = '/app/';
+//$env = '/var/www/transbank-webpay-php/';
+
+require $env.'src/wss/xmlseclibs.php';
+require $env.'src/wss/soap-wsse.php';
 
 class MySoap extends SoapClient {
 
     private $useSSL = false;
+
+    function getEnv()
+    {
+        return '/app/';
+        //return '/var/www/transbank-webpay-php/';
+    }
 
     function __construct($wsdl,$options){
         $locationparts = parse_url($wsdl);
@@ -30,11 +39,11 @@ class MySoap extends SoapClient {
         $objWSSE = new WSSESoap($doc);
 
         $objKey  = new XMLSecurityKey(XMLSecurityKey::RSA_SHA1,array('type'=> 'private'));
-        $objKey->loadKey('/app/src/certs/597020000403.key', TRUE);
+        $objKey->loadKey($this->getEnv().'src/certs/597020000403.key', TRUE);
 
         $options = array("insertBefore" => TRUE);
         $objWSSE->signSoapDoc($objKey, $options);
-        $objWSSE->addIssuerSerial('/app/src/certs/597020000403.crt');
+        $objWSSE->addIssuerSerial($this->getEnv().'src/certs/597020000403.crt');
 
         $objKey = new XMLSecurityKey(XMLSecurityKey::AES256_CBC);
         $objKey->generateSessionKey();

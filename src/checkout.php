@@ -1,13 +1,16 @@
 <?php
 
-require '/app/src/wss/soap-validation.php';
-require '/app/src/class/tbk_TransaccionNormal.php';
-require '/app/src/class/toolbox.php';
+$env = '/app/';
+//$env = '/var/www/transbank-webpay-php/';
+
+require $env.'src/wss/soap-validation.php';
+require $env.'src/class/tbk_TransaccionNormal.php';
+require $env.'src/class/toolbox.php';
 
 toolbox::log('[INTEGRATION] Enter at checkout.php');
 
 $url_wsdl     = 'https://webpay3gint.transbank.cl/WSWebpayTransaction/cxf/WSWebpayService?wsdl';
-$SERVER_CERT  = '/app/src/certs/597020000403.crt';
+$SERVER_CERT  = $env.'src/certs/597020000403.crt';
 $commerceId   = '597020000403';
 $commerceCode = '597020000403';
 $buyOrder     = '0001';

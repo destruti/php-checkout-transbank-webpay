@@ -1,6 +1,9 @@
 <?php
 
-require 'src/class/toolbox.php';
+$env = '/app/';
+//$env = '/var/www/transbank-webpay-php/';
+
+require $env.'src/class/toolbox.php';
 
 toolbox::log('[INTEGRATION] Enter at Index.php');
 
