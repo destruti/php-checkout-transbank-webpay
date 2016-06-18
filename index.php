@@ -1,1 +1,1 @@
-<?php   echo '222'; phpinfo();
+<?php phpinfo();
