@@ -1,11 +1,7 @@
 <?php
 
-var_dump($_SERVER);
-die;
-
-$env = '/app/';
-//$env = '/var/www/transbank-webpay-php/';
-
+if (["SERVER_NAME"] == 'transbank.dev') $env = '/var/www/transbank-webpay-php/';
+if (["SERVER_NAME"] == 'transbank-test.herokuapp.com') $env = '/app/';
 require $env.'src/class/toolbox.php';
 
 toolbox::log('[INTEGRATION] Enter at Index.php');
@@ -14,17 +10,17 @@ toolbox::log('[INTEGRATION] Enter at Index.php');
 
 <center>
 
-    <img src="<?php echo toolbox::website(); ?>logos/transbank.png" style="width: 400px;" />
+    <img src="<?php echo toolbox::website($env); ?>logos/transbank.png" style="width: 400px;" />
     <br/><br/>
 
-    <img src="<?php echo toolbox::website(); ?>logos/Logo_Webpay_CyD.jpg" style="width: 200px;" />
+    <img src="<?php echo toolbox::website($env); ?>logos/Logo_Webpay_CyD.jpg" style="width: 200px;" />
     <br/>
 
     <br/><br/>
 
     <h1>
         <a href="src/checkout.php">
-            <img src="<?php echo toolbox::website(); ?>logos/buy.png" style="width: 100px;" />
+            <img src="<?php echo toolbox::website($env); ?>logos/buy.png" style="width: 100px;" />
         </a>
     </h1>
 

@@ -2,7 +2,9 @@
 
 class toolbox {
 
-    public static function website() {
+    public static function website($env) {
+
+        if ($env == '/app/') return 'https://transbank-test.herokuapp.com/';
         return 'http://transbank.dev/';
     }
 

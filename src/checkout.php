@@ -1,7 +1,7 @@
 <?php
 
-$env = '/app/';
-//$env = '/var/www/transbank-webpay-php/';
+if (["SERVER_NAME"] == 'transbank.dev') $env = '/var/www/transbank-webpay-php/';
+if (["SERVER_NAME"] == 'transbank-test.herokuapp.com') $env = '/app/';
 
 require $env.'src/wss/soap-validation.php';
 require $env.'src/class/tbk_TransaccionNormal.php';
@@ -15,8 +15,8 @@ $commerceId   = '597020000403';
 $commerceCode = '597020000403';
 $buyOrder     = '0001';
 $sessionId    = 'integration_test';
-$returnUrl    = 'http://transbank.dev/returnUrl.php?status=success';
-$finalUrl     = 'http://transbank.dev/returnUrl.php?status=error';
+$returnUrl    = toolbox::website($env).'src/returnUrl.php?status=success';
+$finalUrl     = toolbox::website($env).'src/returnUrl.php?status=error';
 $amount       = '7500';
 
 toolbox::log('[INTEGRATION] Transbank Start SetVars to Checkout');
