@@ -3,6 +3,8 @@
 require 'wss/soap-validation.php';
 require 'class/tbk_TransaccionNormal.php';
 require 'class/toolbox.php';
+require 'wss/xmlseclibs.php';
+require 'wss/soap-wsse.php';
 
 toolbox::log('[INTEGRATION] Enter at checkout.php');
 
