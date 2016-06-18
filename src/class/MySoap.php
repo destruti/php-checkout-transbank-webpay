@@ -1,7 +1,7 @@
 <?php
 
-require '/var/www/transbank/public/src/wss/xmlseclibs.php';
-require '/var/www/transbank/public/src/wss/soap-wsse.php';
+require 'src/wss/xmlseclibs.php';
+require 'src/wss/soap-wsse.php';
 
 class MySoap extends SoapClient {
 
