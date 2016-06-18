@@ -1,7 +1,7 @@
 <?php
 
-require '../wss/xmlseclibs.php';
-require '../wss/soap-wsse.php';
+require '/app/src/wss/xmlseclibs.php';
+require '/app/src/wss/soap-wsse.php';
 
 class MySoap extends SoapClient {
 
@@ -30,11 +30,11 @@ class MySoap extends SoapClient {
         $objWSSE = new WSSESoap($doc);
 
         $objKey  = new XMLSecurityKey(XMLSecurityKey::RSA_SHA1,array('type'=> 'private'));
-        $objKey->loadKey('../certs/597020000403.key', TRUE);
+        $objKey->loadKey('/app/src/certs/597020000403.key', TRUE);
 
         $options = array("insertBefore" => TRUE);
         $objWSSE->signSoapDoc($objKey, $options);
-        $objWSSE->addIssuerSerial('../certs/597020000403.crt');
+        $objWSSE->addIssuerSerial('/app/src/certs/597020000403.crt');
 
         $objKey = new XMLSecurityKey(XMLSecurityKey::AES256_CBC);
         $objKey->generateSessionKey();
