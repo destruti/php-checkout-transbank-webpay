@@ -1,5 +1,8 @@
 <?php
 
+phpinfo();
+die;
+
 $env = '/app/';
 //$env = '/var/www/transbank-webpay-php/';
 
