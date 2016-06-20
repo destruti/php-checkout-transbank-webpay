@@ -2,6 +2,10 @@
 
 class toolbox {
 
+    public static function getCommerceId() {
+        return '597020000403';
+    }
+
     public static function getUrlWsdl() {
         return 'https://webpay3gint.transbank.cl/WSWebpayTransaction/cxf/WSWebpayService?wsdl';
     }
@@ -12,6 +16,14 @@ class toolbox {
 
     public static function getCertKey() {
         return $_SERVER["DOCUMENT_ROOT"].'/src/certs/597020000403.key';
+    }
+
+    public static function makeReturnUrl($buyOrder) {
+        return self::website().'src/returnUrl.php?status=success&buyOrder='.$buyOrder;
+    }
+
+    public static function makeFinalUrl($buyOrder) {
+        return self::website().'src/returnUrl.php?status=error&buyOrder='.$buyOrder;
     }
 
     public static function website() {
