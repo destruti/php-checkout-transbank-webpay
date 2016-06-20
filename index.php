@@ -1,5 +1,7 @@
 <?php
 
+
+
 require $_SERVER["DOCUMENT_ROOT"].'/src/class/toolbox.php';
 toolbox::log('[INTEGRATION] Enter at Index.php');
 
