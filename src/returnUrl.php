@@ -30,7 +30,7 @@ $response = $getTransactionResultResponse->return;
 toolbox::printR('TransactionResult');
 toolbox::printR($response);
 
-if ($response->status == 'success') {
+if ($_GET['status'] == 'success') {
 
     $acknowledgeTransaction = new \acknowledgeTransaction();
     $acknowledgeTransaction->tokenInput = $token_ws;
@@ -49,3 +49,5 @@ if ($response->status == 'success') {
     toolbox::printR('somethings wrong');
 
 }
+
+toolbox::printR('end');
