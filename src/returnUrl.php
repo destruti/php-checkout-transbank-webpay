@@ -27,7 +27,7 @@ $soapValidation->getValidationResult();
 
 $response = $getTransactionResultResponse->return;
 
-toolbox::printR('TransactionResult');
+toolbox::printR('getTransactionResult');
 toolbox::printR($response);
 
 if ($_GET['status'] == 'success') {
@@ -42,7 +42,7 @@ if ($_GET['status'] == 'success') {
     $soapValidation = new \SoapValidation($xmlResponse, $SERVER_CERT);
     $soapValidation->getValidationResult();
 
-    toolbox::printR('done');
+    toolbox::printR('acknowledge done');
 
 } else {
 
