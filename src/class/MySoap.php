@@ -2,7 +2,6 @@
 
 require $_SERVER["DOCUMENT_ROOT"].'/src/wss/xmlseclibs.php';
 require $_SERVER["DOCUMENT_ROOT"].'/src/wss/soap-wsse.php';
-require $_SERVER["DOCUMENT_ROOT"].'/src/class/toolbox.php';
 
 class MySoap extends SoapClient {
 
