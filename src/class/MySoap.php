@@ -2,14 +2,11 @@
 
 require $_SERVER["DOCUMENT_ROOT"].'/src/wss/xmlseclibs.php';
 require $_SERVER["DOCUMENT_ROOT"].'/src/wss/soap-wsse.php';
+require $_SERVER["DOCUMENT_ROOT"].'/src/class/toolbox.php';
 
 class MySoap extends SoapClient {
 
     private $useSSL = false;
-
-    function getEnv(){
-        return $_SERVER["DOCUMENT_ROOT"].'/';
-    }
 
     function __construct($wsdl,$options){
         $locationparts = parse_url($wsdl);
@@ -22,9 +19,9 @@ class MySoap extends SoapClient {
         if ($this->useSSL){
             $locationparts = parse_url($location);
             $location = 'https://';
-            if(isset($locationparts['host'])) $location  .= $locationparts['host'];
-            if(isset($locationparts['port'])) $location  .= ':'.$locationparts['port'];
-            if(isset($locationparts['path'])) $location  .= $locationparts['path'];
+            if(isset($locationparts['host']))  $location  .= $locationparts['host'];
+            if(isset($locationparts['port']))  $location  .= ':'.$locationparts['port'];
+            if(isset($locationparts['path']))  $location  .= $locationparts['path'];
             if(isset($locationparts['query'])) $location .= '?'.$locationparts['query'];
         }
 
@@ -34,11 +31,11 @@ class MySoap extends SoapClient {
         $objWSSE = new WSSESoap($doc);
 
         $objKey  = new XMLSecurityKey(XMLSecurityKey::RSA_SHA1,array('type'=> 'private'));
-        $objKey->loadKey($this->getEnv().'src/certs/597020000403.key', TRUE);
+        $objKey->loadKey(toolbox::getCertKey(), TRUE);
 
         $options = array("insertBefore" => TRUE);
         $objWSSE->signSoapDoc($objKey, $options);
-        $objWSSE->addIssuerSerial($this->getEnv().'src/certs/597020000403.crt');
+        $objWSSE->addIssuerSerial(toolbox::getCert());
 
         $objKey = new XMLSecurityKey(XMLSecurityKey::AES256_CBC);
         $objKey->generateSessionKey();

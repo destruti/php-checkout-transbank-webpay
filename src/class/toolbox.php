@@ -2,8 +2,19 @@
 
 class toolbox {
 
-    public static function website() {
+    public static function getUrlWsdl() {
+        return 'https://webpay3gint.transbank.cl/WSWebpayTransaction/cxf/WSWebpayService?wsdl';
+    }
 
+    public static function getCert() {
+        return $_SERVER["DOCUMENT_ROOT"].'/src/certs/597020000403.crt';
+    }
+
+    public static function getCertKey() {
+        return $_SERVER["DOCUMENT_ROOT"].'/src/certs/597020000403.key';
+    }
+
+    public static function website() {
         $http_type = $_SERVER["REQUEST_SCHEME"];
         $http_type = ($http_type!=''?$http_type:'http');
         return $http_type.'://'.$_SERVER["HTTP_HOST"].'/';
@@ -19,6 +30,7 @@ class toolbox {
         print_r($message);
         echo '</pre>';
     }
+
 
 
 

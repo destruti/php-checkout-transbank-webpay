@@ -4,9 +4,6 @@ require $_SERVER["DOCUMENT_ROOT"].'/src/wss/soap-validation.php';
 require $_SERVER["DOCUMENT_ROOT"].'/src/class/tbk_TransaccionNormal.php';
 require $_SERVER["DOCUMENT_ROOT"].'/src/class/toolbox.php';
 
-$url_wsdl     = 'https://webpay3gint.transbank.cl/WSWebpayTransaction/cxf/WSWebpayService?wsdl';
-$SERVER_CERT  = $_SERVER["DOCUMENT_ROOT"].'/src/certs/597020000403.crt';
-
 toolbox::printR('returned vars POST');
 toolbox::printR($_POST);
 
@@ -18,11 +15,11 @@ $token_ws = $_POST['token_ws'];
 $getTransactionResult = new \getTransactionResult();
 $getTransactionResult->tokenInput = $token_ws;
 
-$webpayService = new \WebpayService($url_wsdl);
+$webpayService = new \WebpayService(toolbox::getUrlWsdl());
 $getTransactionResultResponse = $webpayService->getTransactionResult($getTransactionResult);
 
 $xmlResponse = $webpayService->soapClient->__getLastResponse();
-$soapValidation = new \SoapValidation($xmlResponse, $SERVER_CERT);
+$soapValidation = new \SoapValidation($xmlResponse, toolbox::getCert());
 $soapValidation->getValidationResult();
 
 $response = $getTransactionResultResponse->return;
@@ -35,11 +32,11 @@ if ($_GET['status'] == 'success') {
     $acknowledgeTransaction = new \acknowledgeTransaction();
     $acknowledgeTransaction->tokenInput = $token_ws;
 
-    $webpayService = new \WebpayService($url_wsdl);
+    $webpayService = new \WebpayService(toolbox::getUrlWsdl());
     $webpayService->acknowledgeTransaction($acknowledgeTransaction);
 
     $xmlResponse = $webpayService->soapClient->__getLastResponse();
-    $soapValidation = new \SoapValidation($xmlResponse, $SERVER_CERT);
+    $soapValidation = new \SoapValidation($xmlResponse, toolbox::getCert());
     $soapValidation->getValidationResult();
 
     toolbox::printR('acknowledge done');
