@@ -2,10 +2,11 @@
 
 class toolbox {
 
-    public static function website($env) {
+    public static function website() {
 
-        if ($env == '/app/') return 'https://transbank-test.herokuapp.com/';
-        return 'http://transbank.dev/';
+        $http_type = $_SERVER["REQUEST_SCHEME"];
+        $http_type = ($http_type!=''?$http_type:'http');
+        return $http_type.'://'.$_SERVER["HTTP_HOST"].'/';
     }
 
     public static function log($message) {
@@ -14,9 +15,9 @@ class toolbox {
     }
 
     public static function printR($message) {
-        echo '<br/><br/><br/><pre>';
+        echo '<br/><pre>';
         print_r($message);
-        echo '</pre><br/><br/><br/>';
+        echo '</pre>';
     }
 
 
