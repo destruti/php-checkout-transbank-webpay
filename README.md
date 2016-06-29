@@ -20,4 +20,3 @@ This code show how exactily integrate WebPay, APis and PHP.
 > Method: getTransactionResult
 
 > Method: acknowledgeTransaction
-
